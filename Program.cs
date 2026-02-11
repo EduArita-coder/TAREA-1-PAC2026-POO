@@ -1,19 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Collections;
-using System.Collections.Specialized;
-using System.Data;
-using System.Diagnostics;
-using System.Reflection.Emit;
-using System.Runtime;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Linq.Expressions;
 using TAREA_1_POO.bloque1;
-using System.Net.Http.Headers;
-using System.ComponentModel;
-using System.ComponentModel.Design.Serialization;
+using TAREA_1_POO.bloque2;
 int opcion = 0,opcion1 = 0;
 do
 {
@@ -28,8 +15,8 @@ do
     opcion = int.Parse(Console.ReadLine());
     Console.Clear();
     switch (opcion)
-{
-    case 1:
+    {
+        case 1:
         {
             bool salir = false;
             do{
@@ -47,10 +34,8 @@ do
                 Console.Clear();
               switch (opcion1)
                 {
-                case 1://CALCULADORA IMC
-                    CALCULADORAIMC calculadora = new CALCULADORAIMC();//se crea un objeto de la clase CALCULADORAIMC para poder usar sus metodos
-                    calculadora.CalcularIMC();
-                    calculadora.ResultadoIMC();
+            case 1://CALCULADORA IMC
+                    CALCULADORAIMC calculadora = new CALCULADORAIMC();// CALCULADORAIMC
                     break;
                 case 2://CONVERSION DE TEMPERATURA
                     CONVERTIRTEMP convertir = new CONVERTIRTEMP();
@@ -80,11 +65,60 @@ do
                 }
     
             }while(!salir);
+            break;
         }
-        break;
-    case 2:
-        Console.WriteLine("BLOQUE 2");
-        break;
+        case 2:
+            {
+            do{
+                Console.WriteLine("Elija una opcion :");
+                Console.WriteLine("1. CLASIFICACION DE TRIANGULOS");
+                Console.WriteLine("2. CALIFICACIONES UNAH");
+                Console.WriteLine("3. CALCULADORA DE DESCUENTO");
+                Console.WriteLine("4. DETERMINAR SI UN AÑO ES BISIESTO Y CUANTOS DÍAS TIENE UN MES");
+                Console.WriteLine("5. VALIDADOR DE FECHA");
+                Console.WriteLine("6. CAJERO AUTOMATICO");
+                Console.WriteLine("7. CONVERSION DE UNIDADES DE ALMACENAMIENTO ");
+                Console.WriteLine("8. CALCULADORA DE SALARIO MENSUAL");
+                Console.WriteLine("9. REGRESAR AL MENU ANTERIOR");
+                opcion1 = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (opcion1)
+                {
+                    case 1://CLASIFICACION DE TRIANGULOS
+                        {
+                        TRIANGULOS triangulos = new TRIANGULOS();
+                        break;
+                        }
+                    case 2://CALIFICACIONES UNAH
+                        {
+                        CALIFICACIONESUNAH calificaciones = new CALIFICACIONESUNAH();
+                        break;
+                        }   
+                    case 3://CALCULADORA DE DESCUENTO
+                        {
+                        CALCULADORADESC descuento = new CALCULADORADESC();
+                        break;
+                        }
+                    case 4: //DETERMINAR SI UN AÑO ES BISIESTO Y CUANTOS DÍAS TIENE UN MES
+                        {
+                        AÑOBISIESTO año = new AÑOBISIESTO();
+                        break;
+                        }
+                    case 5://VALIDADOR DE FECHA
+                            {
+                            VALIDADORDEFECHA fecha = new VALIDADORDEFECHA();
+                            }
+                            break;
+                    case 6://CAJERO AUTOMATICO
+                            {
+                                CAJEROAUTOMATICO cajero = new CAJEROAUTOMATICO();
+                            }
+                            break;
+                }
+                    
+            }while(opcion1 != 9);
+            break;
+        }
     case 3:
         Console.WriteLine("BLOQUE 3");
         break;
