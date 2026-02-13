@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using TAREA_1_POO.bloque1;
 using TAREA_1_POO.bloque2;
+using TAREA_1_POO.bloque3;
 int opcion = 0,opcion1 = 0;
 do
 {
@@ -120,7 +121,66 @@ do
             break;
         }
     case 3:
-        Console.WriteLine("BLOQUE 3");
+        do{
+                Console.WriteLine("Elija una opcion :");
+                Console.WriteLine("1. TABLA DE MULTIPLICAR EXTENDIDA");
+                Console.WriteLine("2. NUMEROS PRIMOS EN RANGO");
+                Console.WriteLine("3. GENERACION DE SERIE FIBONACCI");
+                Console.WriteLine("4. FACTORIAL O COMBINACIONES");
+                Console.WriteLine("5. ADIVINAR NUMERO");
+                Console.WriteLine("6. CONTRASEÑA SEGURA VALIDACION");
+                Console.WriteLine("7. CONVERSION DE UNIDADES DE ALMACENAMIENTO ");
+                Console.WriteLine("8. CALCULADORA DE SALARIO MENSUAL");
+                Console.WriteLine("9. REGRESAR AL MENU ANTERIOR");
+                opcion1 = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (opcion1)
+                {
+                    case 1://Tabla de multiplicar extendida
+                        {
+                        TABLADEMULTIPLICAR tabla = new TABLADEMULTIPLICAR();
+                        break;
+                        }
+                    case 2://nos brinda 2 numeros, se averigua que primos hay en ese rango
+                        {
+                        RANGOPRIMOS primos = new RANGOPRIMOS();
+                        break;
+                        }   
+                    case 3://El usuario nos da un numero para generar cierta cantidad de numeros de la serie de fibonacci
+                        {
+                        FIBONACCI serie = new FIBONACCI();
+                        break;
+                        }
+                    case 4: //El usuario elige entre calcular factorial o combinatoria de n numeros
+                        {
+                        FACTORIALYCOMBI facto = new FACTORIALYCOMBI();
+                        break;
+                        }
+                    case 5://El usuario trata de adivinar el numero generado;
+                            {
+                            ADIVINANZA adivinar = new ADIVINANZA();
+                            break;
+                            }
+                            
+                    case 6://Contra Segura o no
+                            {
+                               CONTRA contrasegura = new CONTRA();
+                               break;
+                            }
+                            
+                    case 7://Generacion de figuras con asteriscos
+                        {
+                            PATRONASTERISCO patron = new PATRONASTERISCO();
+                            break;
+                        }
+                    case 8://Calculadora Funcional que guarda datos anteriores
+                        {
+                            CALCULADORA calcu = new CALCULADORA();
+                            break;
+                        }
+                }
+                    
+            }while(opcion1 != 9);
         break;
     case 4:
         Console.WriteLine("BLOQUE 4");
